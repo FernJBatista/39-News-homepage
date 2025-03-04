@@ -212,6 +212,11 @@ header nav #logo {
 header nav #logo img {
   width: 4rem;
 }
+@media screen and (min-width: 64rem) {
+  header nav #mobileMenu {
+    display: none;
+  }
+}
 header nav #navLinks {
   z-index: 2;
   position: absolute;
@@ -228,6 +233,22 @@ header nav #navLinks {
   background-color: rgba(0, 0, 0, 0.2509803922);
   transition: right 0.4s ease-in-out, opacity 0.4s ease-in-out 0.3s;
 }
+@media screen and (min-width: 64rem) {
+  header nav #navLinks {
+    position: relative;
+    top: auto;
+    display: flex;
+    flex: row;
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+    height: auto;
+    flex-direction: row;
+    background-color: transparent;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
 header nav #navLinks.active {
   right: 0;
   visibility: visible;
@@ -238,6 +259,11 @@ header nav #navLinks #mobileMenuClose {
   top: 2rem;
   right: 1.5rem;
   cursor: pointer;
+}
+@media screen and (min-width: 64rem) {
+  header nav #navLinks #mobileMenuClose {
+    display: none;
+  }
 }
 header nav #navLinks #mobileMenuClose img {
   width: 3rem;
@@ -252,15 +278,33 @@ header nav #navLinks ul {
   padding-left: 2rem;
   gap: 1.25rem;
 }
+@media screen and (min-width: 64rem) {
+  header nav #navLinks ul {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    padding-top: 0;
+    width: auto;
+    gap: 2rem;
+  }
+}
 header nav #navLinks ul li {
   font-size: 1.5rem;
   line-height: 1.5;
   font-weight: 400;
   cursor: pointer;
 }
+@media screen and (min-width: 64rem) {
+  header nav #navLinks ul li {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+}
 header nav #navLinks ul li a {
   text-decoration: none;
   color: var(--Very-dark-blue);
+  transition: all 0.2s ease-in-out;
 }
 header nav #navLinks ul li a:hover {
   color: var(--Soft-red);

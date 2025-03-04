@@ -223,6 +223,12 @@ header {
             }
         }
 
+        #mobileMenu {
+            @media screen and (min-width: $desktop-breakpoint) {
+                display: none;
+            }
+        }
+
         #navLinks {
             z-index: 2;
             position: absolute;
@@ -238,6 +244,21 @@ header {
             height: 100vh;
             background-color: #00000040;
             transition: right 0.4s ease-in-out, opacity 0.4s ease-in-out 0.3s;
+
+            @media screen and (min-width: $desktop-breakpoint) {
+                position: relative;
+                top: auto;
+                display: flex;
+                flex: row;
+                opacity: 1;
+                visibility: visible;
+                right: 0;
+                height: auto;
+                flex-direction: row;
+                background-color: transparent;
+                align-items: center;
+                justify-content: flex-end;
+            }
             
             &.active {
                 right: 0;
@@ -251,6 +272,10 @@ header {
                 right: 1.5rem;
                 cursor: pointer;
 
+                @media screen and (min-width: $desktop-breakpoint) {
+                    display: none;
+                } 
+
                 img {
                     width: 3rem;
                 }
@@ -261,9 +286,19 @@ header {
                 flex-direction: column;
                 background-color: var(--Off-white);
                 width: 75%;
-                height: 100%;padding-top: 16rem;
+                height: 100%;
+                padding-top: 16rem;
                 padding-left: 2rem;
                 gap: 1.25rem;
+
+                @media screen and (min-width: $desktop-breakpoint) {
+                    display: flex;
+                    flex-direction: row;
+                    height: auto;
+                    padding-top: 0;
+                    width: auto;
+                    gap: 2rem;
+                }
 
                 li {
                     font-size: 1.5rem;
@@ -271,9 +306,16 @@ header {
                     font-weight: 400;
                     cursor: pointer;
 
+                    @media screen and (min-width: $desktop-breakpoint) {
+                        font-size: 1rem;
+                        line-height: 1.5;
+                        font-weight: 400;
+                    }
+
                     a {
                         text-decoration: none;
                         color: var(--Very-dark-blue);
+                        transition: all 0.2s ease-in-out;
 
                         &:hover {
                             color: var(--Soft-red);
